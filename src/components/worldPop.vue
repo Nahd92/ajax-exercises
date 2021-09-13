@@ -1,8 +1,8 @@
 <template>
   <div class="worldPop">
     <div v-for="pop in populations" v-bind:key="pop.id">
-      <div class="country">Country: {{ pop.countryName }}</div>
-      <div class="country">Population: {{ pop.value }}</div>
+      <div class="country"><strong>Country</strong>: {{ pop.countryName }}</div>
+      <div class="country"><strong>Population</strong>: {{ pop.value }}</div>
       <br />
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
           const countriespopulationCounts = data.data[i].populationCounts;
           countriespopulationCounts.forEach((population) => {
             if (population.year == "2018") {
-              const value = population.value;
+              const value = new Intl.NumberFormat().format(population.value);
               this.populations.push({ countryName, value });
             }
           });
