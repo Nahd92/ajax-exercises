@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <world-pop />
+    <worldPopAsync />
   </div>
 </template>
 
 <script>
-import worldPop from "./components/worldPop.vue";
+import worldPopAsync from "./components/worldPopAsync.vue";
 export default {
   name: "app",
   components: {
-    worldPop,
+    worldPopAsync,
   },
 };
 </script>
